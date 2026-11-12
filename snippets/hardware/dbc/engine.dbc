@@ -1,0 +1,20 @@
+VERSION ""
+
+NS_ :
+
+BS_:
+
+BU_: Host Device
+
+BO_ 416 DeviceTemp: 3 Device
+ SG_ Temperature : 0|16@1- (0.01,0) [-327.68|327.67] "C" Host
+ SG_ Counter : 16|8@1+ (1,0) [0|255] "" Host
+
+BO_ 161 Alarm: 1 Device
+ SG_ Code : 0|8@1+ (1,0) [0|255] "" Host
+
+BO_ 512 PumpCommand: 2 Host
+ SG_ Speed : 0|12@1+ (0.5,0) [0|1500] "rpm" Device
+ SG_ Enable : 12|1@1+ (1,0) [0|1] "" Device
+
+CM_ SG_ 416 Temperature "Coolant temperature";

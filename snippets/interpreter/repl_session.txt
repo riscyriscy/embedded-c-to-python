@@ -1,0 +1,17 @@
+0xFF00 >> 8
+hex(0x1234 & 0xFF)
+2**40
+import struct
+data = struct.pack("<HB", 0x1234, 7)
+data
+data.hex(" ")
+_
+type(data), type(data[0]), type(data[0:1])
+help(struct.calcsize)
+[n for n in dir(bytes) if not n.startswith("_")][:6]
+sys.version_info[:2]
+import sys
+sys.version_info[:2]
+for b in data:
+    print(f"{b:02x}", end=" ")
+

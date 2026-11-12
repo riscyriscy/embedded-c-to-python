@@ -1,0 +1,22 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "frametool: current file",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${file}",
+            "console": "integratedTerminal",
+            "justMyCode": true
+        },
+        {
+            "name": "frametool: self-test",
+            "type": "debugpy",
+            "request": "launch",
+            "module": "frametool",
+            "args": ["--selftest"],
+            "console": "integratedTerminal",
+            "justMyCode": true
+        }
+    ]
+}

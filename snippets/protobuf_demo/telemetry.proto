@@ -1,0 +1,22 @@
+// The telemetry record from the ctypes example, as a protobuf schema.
+// Generate the Python module with:
+//   python -m grpc_tools.protoc -I. --python_out=. --pyi_out=. telemetry.proto
+syntax = "proto3";
+
+message Telemetry {
+  uint32 timestamp_ms = 1;
+  // no 16-bit type in protobuf; sint32 keeps small negatives short. optional: 0 is sent, not left
+  // out, and HasField() tells a temperature of 0 from no temperature at all
+  optional sint32 temperature_cdeg = 2;
+  uint32 supply_mv = 3;
+  uint32 status = 4;
+}
+
+// What a later firmware release might send: the same record plus one new field
+message TelemetryV2 {
+  uint32 timestamp_ms = 1;
+  optional sint32 temperature_cdeg = 2;
+  uint32 supply_mv = 3;
+  uint32 status = 4;
+  uint32 uptime_s = 5;
+}

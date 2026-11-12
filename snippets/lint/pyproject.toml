@@ -1,0 +1,15 @@
+# A starting configuration for ruff and mypy. Copy the tables into your own pyproject.toml.
+[tool.ruff]
+line-length = 100
+target-version = "py312"
+
+[tool.ruff.lint]
+# E, W: pycodestyle  F: pyflakes  I: isort  B: bugbear  UP: pyupgrade
+# S: bandit rules    SIM: simplifications  PLW: pylint warnings  PERF: performance
+select = ["E", "F", "W", "I", "B", "UP", "S", "SIM", "PLW", "PERF"]
+
+[tool.ruff.lint.per-file-ignores]
+"tests/**" = ["S101"]  # pytest tests are written with assert
+
+[tool.mypy]
+strict = true
